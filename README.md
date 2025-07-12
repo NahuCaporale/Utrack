@@ -1,3 +1,8 @@
+Nombre: Nahuel Caporale
+dni:44927800 
+email:nahucaporale21@gmail.com
+sede:tandil
+
 # Utrack
 Utrack permite gestionar listas de manera sencilla e intuitiva
 ## Complicaciones
