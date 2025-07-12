@@ -1,0 +1,42 @@
+<div class="justify-content-center align-items-center container">
+  <h1 class="justify-content-center">Playlists</h1>
+
+  <button class="btn btnClass align-items-center" (click)="showFormu()">➕Crear playlist</button>
+  @if(showForm){
+    <div class="mt-3">
+      <form>
+        <div class="form-group">
+          <label for="playlistName" class="form-label">Nombre de la Playlist</label>
+          <input type="text" name="playlistName" class="form-control" id="playlistName" [(ngModel)]="nombrePlaylist"
+            placeholder="Ingresa el nombre de la playlist">
+
+        </div>
+        <button type="button" class="btn btnClass justify-content-center" (click)="addPlaylist(nombrePlaylist)">Agregar
+          Playlist</button>
+      </form>
+    </div>}
+
+    <section class="sectionCards">
+      @for(playlist of playlists; track playlist.id){
+        
+        <div class="card mb-3 cardStyle card-body" style="max-width: 540px;">
+          <h5 class="card-title ">🎵{{ playlist.name }}</h5>
+          <p >canciones:</p>
+
+          @if(playlist.songs.length > 0){
+            <ul>
+
+              @for(songid of playlist.songs; track $index) {
+                <li class="canciones">
+                  {{ getSongNombre(songid) }}
+                </li>
+                }
+            </ul>
+            }
+          @else{
+            <p>No hay canciones en esta playlist</p>
+            }
+
+        </div>
+        }
+    </section>

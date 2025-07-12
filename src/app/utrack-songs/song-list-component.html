@@ -1,0 +1,57 @@
+<div class="cambiarNombre">
+  <h1>Bienvenido {{ nombre }}!</h1>
+    <button class="btn btnCambiarNombre btnClass" (click)="cambiarNombre()">Cambiar nombre </button>
+</div>
+<section class="sectionCards">
+  @for(song of songs; track song.id){
+    <div class="card mb-3 cardStyle" style="max-width: 540px;" id="{{ song.id }}">
+      <div class="row g-0 h-100 align-items-stretch flex-column flex-md-row">
+        <div class="col-md-4 image-container p-0 ">
+          <img [src]="song.cover" class="img-fluid rounded-start card-img" [alt]="song.nombre">
+        </div>
+        <div class="col-8 d-flex bCard">
+          <div class="card-body justify-content-between">
+            <h5 class="card-title ">🎵{{ song.nombre }}</h5>
+            <span class="card-text">
+              <p>
+                Artista: {{ song.artist }}
+              </p>
+              <p>
+                Genero: {{ song.genre }}
+              </p>
+              <p>@if(song.album != '') {
+                Album: {{ song.album }}
+                }
+              </p>
+            </span>
+            <button (click)="showSelect(song.id)" class="btn btnClass">
+              Añadir a playlist
+            </button>
+
+              <div *ngIf="song.showSelect" class="select-container">
+              <select class="form-select" [(ngModel)]="selectedPlaylistId" (change)="addSongToPlaylist()"
+                aria-label="Selecciona playlist">
+                <option value="" disabled selected>— Elige playlist —</option>
+                <!-- Si no hay playlists, sugerimos crear una -->
+                @if(playlists.length > 0){
+                  @for(pl of playlists; track pl.id){
+                    <option [value]="pl.id">
+                      {{ pl.name }}
+                    </option>
+                    }
+                    }
+
+                  @else{
+                    <option [ngValue]="-1">
+                      No tienes playlists… ¡crea una!
+                    </option>}
+              </select>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    }
+</section>

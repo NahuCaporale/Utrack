@@ -1,0 +1,36 @@
+$colorTer: #222222;
+$colorPrim: #1dcd9f;
+$colorSec: #169976;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-label {
+  color: $colorSec;
+}
+.cardStyle {
+    margin-top: 1em;
+  background: $colorTer;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s;
+}
+.card-title {
+  color: white;
+}
+.card {
+  width:  max-content;
+}
+.cardStyle:hover {
+  transform: translateY(2px);
+}
+ul{
+}
+.canciones{
+  margin-left:  0;
+  color: white;
+  list-style: none;
+}

@@ -1,0 +1,38 @@
+$secundario: #169976;
+$primario: #1dcd9f;
+$ter: #1e1e1e;
+
+body {
+  background-color: #121212;
+}
+p {
+  color: white;
+  
+}
+h1 {
+  color: $primario;
+  
+}
+
+.btnClass {
+  border-color: $primario;
+  background: $primario;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.btnClass:hover {
+  background: black;
+  color: white;
+  border-color: $secundario;
+  transition: 0.8s;
+}
+.sectionCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 5px;
+  width: fit-content;
+}

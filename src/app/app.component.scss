@@ -1,0 +1,28 @@
+$colorTer: #222222;
+$colorPrim: #1dcd9f;
+$colorSec: #169976;
+
+.nav-link.active {
+  color: $colorPrim;
+  font-weight: bold;
+  background-color: rgba(29, 205, 159, 0.1);
+  border-radius: 4px;
+}
+
+.aStyle {
+  color: white;
+}
+
+.aStyle:hover {
+  color: $colorSec;
+  transition: 0.8s;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+}
+
+.nav-link.active:hover {
+  background-color: rgba(29, 205, 159, 0.2);
+  color: $colorSec !important;
+}
